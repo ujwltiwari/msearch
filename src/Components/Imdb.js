@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 const Imdb = () => {
@@ -9,7 +9,7 @@ const Imdb = () => {
   useEffect(() => {
     const handleApi = async () => {
       let data = await axios.get(
-        searchBtn == true
+        searchBtn === true
           ? `http://www.omdbapi.com/?i=${searchKey}&apikey=695a8435&plot=full`
           : `http://www.omdbapi.com/?t=${searchKey}&apikey=695a8435&plot=full`
       );
@@ -30,7 +30,6 @@ const Imdb = () => {
   }, []);
 
   let movieData = movie[0];
-  console.log(movie);
   return (
     <>
       <nav className="navbar bg-dark">
@@ -64,7 +63,7 @@ const Imdb = () => {
           </button>
         </div>{" "}
         <br />
-        {movie.length == 0 ? (
+        {movie.length === 0 ? (
           <>
             <h1 className="display-4 text-center">
               Enter IMDB ID to Get Started
