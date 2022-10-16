@@ -10,8 +10,8 @@ const Imdb = () => {
     const handleApi = async () => {
       let data = await axios.get(
         searchBtn === true
-          ? `http://www.omdbapi.com/?i=${searchKey}&apikey=695a8435&plot=full`
-          : `http://www.omdbapi.com/?t=${searchKey}&apikey=695a8435&plot=full`
+          ? `https://www.omdbapi.com/?i=${searchKey}&apikey=695a8435&plot=full`
+          : `https://www.omdbapi.com/?t=${searchKey}&apikey=695a8435&plot=full`
       );
       setMovie([data.data]);
     };
@@ -22,7 +22,7 @@ const Imdb = () => {
   useEffect(() => {
     const fetchData = async () => {
       let data = await axios.get(
-        `http://www.omdbapi.com/?i=${searchKey}&apikey=695a8435&plot=full`
+        `https://www.omdbapi.com/?i=${searchKey}&apikey=695a8435&plot=full`
       );
       setMovie([data.data]);
     };
